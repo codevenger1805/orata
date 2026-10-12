@@ -1,6 +1,6 @@
 # Orata 🎙️
 
-🌐 **Live:** https://orata-blush.vercel.app/
+🌐 **[Try Orata Live](https://orata-blush.vercel.app/)**
 
 **Think fast. Speak clearly. Try not to say “umm” 47 times.**
 
