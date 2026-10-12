@@ -1,0 +1,45 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id              String            @id @default(uuid())
+  email           String?           @unique
+  name            String?
+  streakCount     Int               @default(1)
+  lastActiveDate  DateTime?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  attempts        SpeakingAttempt[]
+}
+
+model SpeakingAttempt {
+  id              String   @id @default(uuid())
+  userId          String?
+  user            User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challengeId     String
+  topicTitle      String
+  mode            String   // impromptu, interview, communication
+  niche           String   // Career, Tech, etc.
+  attemptNumber   Int      @default(1)
+  durationSeconds Int
+  overallScore    Int
+  clarityScore    Int
+  structureScore  Int
+  fluencyScore    Int
+  concisenessScore Int
+  strengths       String[]
+  focusMetric     String
+  focusReason     String
+  nextInstruction String
+  transcript      String   @db.Text
+  createdAt       DateTime @default(now())
+
+  @@index([challengeId])
+  @@index([userId])
+}

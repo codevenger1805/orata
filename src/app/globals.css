@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vanilla-cream: #f0ead2;
+  --color-vanilla-cream-100: #433a16;
+  --color-vanilla-cream-200: #87752d;
+  --color-vanilla-cream-300: #c3ab4a;
+  --color-vanilla-cream-400: #d9ca8e;
+  --color-vanilla-cream-500: #f0ead2;
+  --color-vanilla-cream-600: #f3eeda;
+  --color-vanilla-cream-700: #f6f2e3;
+  --color-vanilla-cream-800: #f9f6ed;
+  --color-vanilla-cream-900: #fcfbf6;
+
+  --color-tea-green: #dde5b6;
+  --color-tea-green-100: #363d16;
+  --color-tea-green-200: #6d792c;
+  --color-tea-green-300: #a3b642;
+  --color-tea-green-400: #c1cf7b;
+  --color-tea-green-500: #dde5b6;
+  --color-tea-green-600: #e4eac6;
+  --color-tea-green-700: #ebf0d4;
+  --color-tea-green-800: #f2f5e3;
+  --color-tea-green-900: #f8faf1;
+
+  --color-muted-olive: #adc178;
+  --color-muted-olive-100: #242b14;
+  --color-muted-olive-200: #495527;
+  --color-muted-olive-300: #6d803b;
+  --color-muted-olive-400: #92aa4e;
+  --color-muted-olive-500: #adc178;
+  --color-muted-olive-600: #bdcd92;
+  --color-muted-olive-700: #ced9ad;
+  --color-muted-olive-800: #dee6c9;
+  --color-muted-olive-900: #eff2e4;
+
+  --color-faded-copper: #a98467;
+  --color-faded-copper-100: #231a13;
+  --color-faded-copper-200: #453427;
+  --color-faded-copper-300: #684e3a;
+  --color-faded-copper-400: #8a684e;
+  --color-faded-copper-500: #a98467;
+  --color-faded-copper-600: #ba9c84;
+  --color-faded-copper-700: #cbb4a3;
+  --color-faded-copper-800: #dccdc2;
+  --color-faded-copper-900: #eee6e0;
+
+  --color-ash-brown: #6c584c;
+  --color-ash-brown-100: #15120f;
+  --color-ash-brown-200: #2b231e;
+  --color-ash-brown-300: #40352e;
+  --color-ash-brown-400: #56473d;
+  --color-ash-brown-500: #6c584c;
+  --color-ash-brown-600: #927867;
+  --color-ash-brown-700: #ae998c;
+  --color-ash-brown-800: #c9bbb3;
+  --color-ash-brown-900: #e4ddd9;
+}
+
+@layer base {
+  :root {
+    --bg-main: #fcfbf6;
+    --text-primary: #15120f;
+    --text-secondary: #40352e;
+    --text-muted: #6c584c;
+    --border-color: #dde5b6;
+    --card-bg: #ffffff;
+    --accent-olive: #adc178;
+    --accent-copper: #a98467;
+    --accent-ash: #6c584c;
+    --accent-tea: #dde5b6;
+    --accent-cream: #f0ead2;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Editorial Serif typography for big elegant display headers */
+  .font-serif-editorial {
+    font-family: "Georgia", "Cambria", "Times New Roman", Times, serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f6f2e3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #adc178;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d803b;
+}
+
+/* Subtle organic aesthetic keyframe animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.04);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 6s ease-in-out infinite;
+}
